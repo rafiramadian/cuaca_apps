@@ -54,8 +54,8 @@ class WeatherData {
 }
 
 class Coord {
-  double? lon;
-  double? lat;
+  num? lon;
+  num? lat;
 
   Coord({this.lon, this.lat});
 
@@ -120,9 +120,9 @@ class Main {
 }
 
 class Wind {
-  double? speed;
+  num? speed;
   int? deg;
-  double? gust;
+  num? gust;
 
   Wind({this.speed, this.deg, this.gust});
 

@@ -4,7 +4,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:http/http.dart' as http;
 
 class HttpService {
-  static const String _baseUrl = String.fromEnvironment('BASE_URL');
+  static const String _baseUrl = "https://api.openweathermap.org/data/2.5/";
 
   // HTTP get method
   static Future<Map<String, dynamic>> get(String path) async {
