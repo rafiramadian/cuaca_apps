@@ -1,0 +1,69 @@
+commit f077e690329adb6c13f996a796b2a159a79b6c14
+Author: rafiramadian <89655817+rafiramadian@users.noreply.github.com>
+Date:   Sat Nov 11 21:55:45 2023 +0700
+
+    Move base url to hardcode (#8)
+    
+    Co-authored-by: Rafi Ramadian <rafi@liku.id>
+
+commit 8829e3fb60a5033d28b8c024c1d088f6ad561ea2
+Author: rafiramadian <89655817+rafiramadian@users.noreply.github.com>
+Date:   Sat Nov 11 21:23:16 2023 +0700
+
+    Add args on profile and release mode (#7)
+    
+    Co-authored-by: Rafi Ramadian <rafi@liku.id>
+
+commit a65a00ad5daa690e6cdd4266822827cf2a284cbc
+Author: rafiramadian <89655817+rafiramadian@users.noreply.github.com>
+Date:   Sat Nov 11 21:01:27 2023 +0700
+
+    Add internet permission manifest | Cleanup file or code unused (#6)
+    
+    Co-authored-by: Rafi Ramadian <rafi@liku.id>
+
+commit bb98e69ccdd6cde53201324a4520316c32cc3337
+Author: rafiramadian <89655817+rafiramadian@users.noreply.github.com>
+Date:   Sat Nov 11 19:17:40 2023 +0700
+
+    Fix Android permission | Fix dotenv errro file not found (#5)
+    
+    Co-authored-by: Rafi Ramadian <rafi@liku.id>
+
+commit 13c3eec3851b70d409fafc857dbb2c5a427939fe
+Author: rafiramadian <89655817+rafiramadian@users.noreply.github.com>
+Date:   Sat Nov 11 17:01:49 2023 +0700
+
+    Improve UI | Add Font and Assets | Fix catch no connectivity error (#4)
+    
+    Co-authored-by: Rafi Ramadian <rafi@liku.id>
+
+commit 1545b5114d0f8a1416211cb2a66877e99985edf1
+Author: rafiramadian <89655817+rafiramadian@users.noreply.github.com>
+Date:   Sat Nov 11 09:29:37 2023 +0700
+
+    Add Comment (#3)
+    
+    Co-authored-by: Rafi Ramadian <rafi@liku.id>
+
+commit 4402f9ff1cde1bcf1627e385dff4254bcda19015
+Author: rafiramadian <89655817+rafiramadian@users.noreply.github.com>
+Date:   Sat Nov 11 09:19:03 2023 +0700
+
+    Add city search feature (#2)
+    
+    Co-authored-by: Rafi Ramadian <rafi@liku.id>
+
+commit b09ea8deb5bf58a5265d7f74dea604217e399354
+Author: rafiramadian <89655817+rafiramadian@users.noreply.github.com>
+Date:   Fri Nov 10 22:14:51 2023 +0700
+
+    Add main feature (#1)
+    
+    Co-authored-by: Rafi Ramadian <rafi@liku.id>
+
+commit cb0df7550a2440a2a091bf03191c4c150b020fd6
+Author: Rafi Ramadian <rafi@liku.id>
+Date:   Fri Nov 10 22:02:09 2023 +0700
+
+    Initialize Cuaca Apps
