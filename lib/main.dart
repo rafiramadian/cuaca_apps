@@ -7,7 +7,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 
 void main() async {
-  await dotenv.load(fileName: '/Users/rafiramadian/Jojonomic/cuaca_apps/.env');
+  await dotenv.load();
   setupLocator();
   runApp(const MyApp());
 }
@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => GetIt.instance.get<WeatherBloc>())
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Cuaca Apps',
         theme: ThemeData(
           primarySwatch: Colors.blue,
