@@ -16,13 +16,19 @@
             "name": "cuaca_apps (profile mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "profile",
+            "args": [
+                "--dart-define=BASE_URL=https://api.openweathermap.org/data/2.5/",
+            ],
         },
         {
             "name": "cuaca_apps (release mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "release",
+            "args": [
+                "--dart-define=BASE_URL=https://api.openweathermap.org/data/2.5/",
+            ],
         }
     ]
 }
