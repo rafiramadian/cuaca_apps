@@ -9,8 +9,10 @@ class WeatherApi {
   final HttpService httpService;
   WeatherApi({required this.httpService});
 
+  // Get API Key from env ignored by git for security
   final String apiKey = dotenv.get('API_KEY');
 
+  // Call API Server and get response
   Future<WeatherData> getWeatherDataByLocation(
       {required Location location}) async {
     try {
@@ -28,6 +30,7 @@ class WeatherApi {
     }
   }
 
+  // Call API Server and get response
   Future<CitySuggestionWeather> getCitySuggestion(
       {required String input}) async {
     try {
@@ -46,6 +49,7 @@ class WeatherApi {
     }
   }
 
+  // Call API Server and get response
   Future<WeatherData> getWeatherDataByCity({required String city}) async {
     try {
       Map<String, dynamic> response =

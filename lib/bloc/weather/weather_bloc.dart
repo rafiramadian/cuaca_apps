@@ -11,6 +11,7 @@ part 'weather_state.dart';
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   final WeatherApi weatherApi;
   WeatherBloc({required this.weatherApi}) : super(WeatherInitial()) {
+    // Fetch weather data by User's location
     Future<void> fetchWeatherData(WeatherFetchEvent event, emit) async {
       try {
         emit(WeatherLoading());
@@ -28,6 +29,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       }
     }
 
+    // Fetch weather data by city selected
     Future<void> fetchWeatherDataByCity(
         WeatherFetchByCityEvent event, emit) async {
       try {
@@ -47,9 +49,12 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     on<WeatherFetchByCityEvent>(fetchWeatherDataByCity);
   }
 
+  // Additional function for TypeaheadFormField needs
+  // Fetch city suggestion by User's search input
   Future<CitySuggestionWeather> fetchCitySuggestionWeatherByInput(
       {required String input}) async {
     try {
+      // Get city suggestion data from API
       final CitySuggestionWeather citySuggestionWeather =
           await weatherApi.getCitySuggestion(input: input);
 

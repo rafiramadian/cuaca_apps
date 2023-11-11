@@ -5,12 +5,14 @@ import 'package:http/http.dart' as http;
 class HttpService {
   static const String _baseUrl = String.fromEnvironment('BASE_URL');
 
+  // HTTP get method
   static Future<Map<String, dynamic>> get(String path) async {
     final response = await http.get(Uri.parse('$_baseUrl$path'));
 
     return _handleResponse(response);
   }
 
+  // HTTP post method
   static Future<Map<String, dynamic>> post(String path, dynamic data) async {
     final response = await http.post(
       Uri.parse('$_baseUrl$path'),
@@ -21,6 +23,7 @@ class HttpService {
     return _handleResponse(response);
   }
 
+  // Handler for response
   static Future<Map<String, dynamic>> _handleResponse(
       http.Response response) async {
     final Map<String, dynamic> responseBody = json.decode(response.body);
