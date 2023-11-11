@@ -17,6 +17,9 @@ dependencies:
   get_it: ^7.6.0
   flutter_dotenv: ^5.1.0
   flutter_typeahead: ^3.2.5
+  google_fonts: ^3.0.0
+  shimmer: ^2.0.0
+  connectivity: ^3.0.3
 
 
 dev_dependencies:
