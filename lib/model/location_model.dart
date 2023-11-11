@@ -24,19 +24,29 @@ class Location {
     );
   }
 
-  static Future<void> requestLocationPermission() async {
+  static Future<void> checkLocationPermission() async {
     try {
-      LocationPermission permission = await Geolocator.requestPermission();
+      LocationPermission permission = await Geolocator.checkPermission();
 
       if (permission == LocationPermission.always ||
           permission == LocationPermission.whileInUse) {
-        // Location permission granted, you can now proceed with location-related tasks
         debugPrint(
-            'requestLocationPermission | status: Location permission granted');
+            'checkLocationPermission | status: Location permission granted');
       } else {
         // Handle case when user denies location permission
         debugPrint(
-            'requestLocationPermission | status: Location permission denied');
+            'checkLocationPermission | status: Location permission denied');
+        LocationPermission permission = await Geolocator.requestPermission();
+
+        if (permission == LocationPermission.always ||
+            permission == LocationPermission.whileInUse) {
+          debugPrint('requestPermission | status: Location permission granted');
+        } else if (permission == LocationPermission.denied) {
+          debugPrint('requestPermission | status: Location permission denied');
+        } else {
+          debugPrint(
+              'requestPermission | status: Location permission denied forever');
+        }
       }
     } catch (e) {
       debugPrint(
@@ -46,6 +56,7 @@ class Location {
 
   static Future<Location> getUserLocation() async {
     try {
+      // Retrieve User location data
       Position position = await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.high);
       final Location location =
