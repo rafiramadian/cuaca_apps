@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:connectivity/connectivity.dart';
 import 'package:http/http.dart' as http;
 
 class HttpService {
@@ -7,20 +8,41 @@ class HttpService {
 
   // HTTP get method
   static Future<Map<String, dynamic>> get(String path) async {
-    final response = await http.get(Uri.parse('$_baseUrl$path'));
+    try {
+      _checkConnectivity();
 
-    return _handleResponse(response);
+      final response = await http.get(Uri.parse('$_baseUrl$path'));
+
+      return _handleResponse(response);
+    } catch (e) {
+      rethrow;
+    }
   }
 
   // HTTP post method
   static Future<Map<String, dynamic>> post(String path, dynamic data) async {
-    final response = await http.post(
-      Uri.parse('$_baseUrl$path'),
-      body: jsonEncode(data),
-      headers: {'Content-Type': 'application/json'},
-    );
+    try {
+      _checkConnectivity();
 
-    return _handleResponse(response);
+      final response = await http.post(
+        Uri.parse('$_baseUrl$path'),
+        body: jsonEncode(data),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      return _handleResponse(response);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<void> _checkConnectivity() async {
+    // Check for internet connectivity
+    final ConnectivityResult connectivityResult =
+        await Connectivity().checkConnectivity();
+    if (connectivityResult == ConnectivityResult.none) {
+      throw Exception('No internet connection');
+    }
   }
 
   // Handler for response
